@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<head>
+	<title>malculator</title>
+</head>
+<body>
+	<h1>Malculator Online</h1>
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Education
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		Undergraduate  <input type="checkbox" value="1.5" id="one">
+		College Degree  <input type="checkbox" value="1.2" id="two">
+		HighSchool Degree <input type="checkbox" value="1.05" id="three">
+		Middle School <input type="checkbox" value="0.9" id="four">
+  </div>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Family Net Worth
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		More than 100,000$  <input type="checkbox" value="2" id="five">
+		50,000$-100,000$  <input type="checkbox" value="1.5" id="six">
+		Less than 50,000$ <input type="checkbox" value="1.2" id="seven">
+  </div>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Skills
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		Playing on dombra  <input type="checkbox" value="100" id="8">
+		Good cook  <input type="checkbox" value="200" id="9">
+		 Easygoing character<input type="checkbox" value="150" id="10">
+		 Sings well <input type="checkbox" value="100" id="11">
+  </div>
+</div>
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Age
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		Between 18-23  <input type="checkbox" value="1.50" id="12">
+		Between 24-27  <input type="checkbox" value="1.20" id="13">
+		 More than 28+  <input type="checkbox" value="0.950" id="14">
+  </div>
+</div>
+<div class="dropdown">
+
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Gossips
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		 parent's attitude  <input type="checkbox" value="0.850" id="15">
+		 his/her character   <input type="checkbox" value="0.900" id="16">
+		 his/her person  <input type="checkbox" value="-200" id="17">
+  </div>
+</div>
+<br>
+    <h2>Overall:<div id="total"></div></h2>
+    <script type="text/javascript">
+    	var total = 500;
+function CalculateTotal(){
+    $("input:checkbox").each(function(){
+        if($(this).is(":checked")){
+            if($(this).is("#8")||$(this).is("#9")||$(this).is("#10")||$(this).is("#11")||$(this).is("#17")){
+        	 total += parseFloat($(this).val());
+            }
+            else{
+            	total *= parseFloat($(this).val());
+            }
+
+        }
+    });
+    $("#total").html(total);
+}
+
+$("input:checkbox").change(function(){
+    total = 500;
+    CalculateTotal();
+}).trigger("change");
+    </script>
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<img src="https://cdn.discordapp.com/attachments/769133542692487170/784027091191726110/image0.png">
+
+</body>
+</html>
